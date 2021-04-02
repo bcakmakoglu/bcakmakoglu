@@ -1,7 +1,6 @@
 - 👋 Hi, I’m Burak Cakmakoglu
 - 👀 I’m interested in Cloud development, Bots, AI, Self-Automation
 - 🌱 I’m currently learning Angular
-- 💞️ I’m looking to collaborate on AI, Bots and Self-Automation
 - 📫 How to reach me brainbraks@googlemail.com
 
 <!---
