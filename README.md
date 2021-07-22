@@ -1,4 +1,4 @@
-# Here's some code that describes me
+[![trophy](https://github-profile-trophy.vercel.app/?username=bcakmakoglu)](https://github.com/bcakmakoglu)
 
 ```ts
 
