@@ -6,9 +6,10 @@ button:
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
 intro:
-  desc: This is my homepage
+  desc: Welcome to my Homepage
   dynamic-route: Demo of dynamic route
   hi: Hi, {name}!
   aka: Also known as
   whats-your-name: What's your name?
 not-found: Not found
+loading: Loading...

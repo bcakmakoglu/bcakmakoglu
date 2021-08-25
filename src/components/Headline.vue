@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useAttrs } from '@vue/runtime-core'
 
 enum Headlines {
   heading1 = 'h1',
@@ -18,7 +19,7 @@ interface HeadlineProps {
 // Minimal usage:
 const props = defineProps<HeadlineProps>()
 
-const headline = h(Headlines[props.type] ?? 'h1', {}, props.text)
+const headline = h(Headlines[props.type] ?? 'h1', { ...useAttrs() }, props.text)
 
 // In order to have a visual reminder of which props are made available, a placeholder hint can be supplied:
 // defineProps(getSliceComponentProps(['slice', 'index', 'slices', 'context']))

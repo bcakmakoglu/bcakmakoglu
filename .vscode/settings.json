@@ -13,4 +13,7 @@
   "files.associations": {
     "*.css": "postcss",
   },
+  "vetur.grammar.customBlocks": {
+    "route": "yaml"
+  } 
 }

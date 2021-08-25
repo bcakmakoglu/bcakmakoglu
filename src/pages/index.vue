@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { usePrismic, getSliceZoneComponents } from '@prismicio/vue'
 import { useUserStore } from '~/stores/user'
 
 const user = useUserStore()
@@ -14,27 +13,16 @@ const go = () => {
 const { t } = useI18n()
 
 // Prismic related
-const { client } = usePrismic()
-const document = ref()
-const headline = ref()
-onMounted(async() => {
-  document.value = await client.getSingle('homepage')
-  headline.value = document.value.data.headline[0]
-})
-
-const components = getSliceZoneComponents({
-  // Standard, mapping slices of type `foo` to component `Foo`:
-})
+// const { client } = usePrismic()
+// const document = ref()
+// const headline = ref()
 </script>
 
 <template>
   <div>
-    <p class="text-4xl">
-      <carbon-campsite class="inline-block" />
-    </p>
     <p>
-      <a rel="noreferrer" href="https://github.com/bcakmakoglu/bcakmakoglu" target="_blank">
-        <Headline v-if="document" :text="headline.text" :type="headline.type"></Headline>
+      <a rel="noreferrer" href="https://github.com/bcakmakoglu" target="_blank">
+        <Headline class="text-navy-200" type="heading1" text="Burak Cakmakoglu"></Headline>
       </a>
     </p>
     <p>
