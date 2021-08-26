@@ -1,4 +1,6 @@
-[![trophy](https://github-profile-trophy.vercel.app/?username=bcakmakoglu)](https://github.com/bcakmakoglu)
+# Burak Cakmakoglu's Profile 🏴‍☠️
+
+<img src="https://i.redd.it/v23m1t92qhx01.jpg" alt="drawing" width="500" />
 
 ```ts
 
@@ -58,9 +60,8 @@ const Braks: Developer = {
 };
 
 ```
+[![trophy](https://github-profile-trophy.vercel.app/?username=bcakmakoglu)](https://github.com/bcakmakoglu)
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=bcakmakoglu&show_icons=true&theme=dark)
-<!---
-bcakmakoglu/bcakmakoglu is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=bcakmakoglu&show_icons=true)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=bcakmakoglu)](https://github.com/bcakmakoglu/github-readme-stats)
