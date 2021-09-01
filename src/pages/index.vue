@@ -30,12 +30,6 @@ const navigation = [
 const route = useRoute()
 const currentBg = computed(() => navigation.find(nav => nav.path === route.path)?.theme)
 const cards = computed(() => navigation.filter(nav => nav.path !== route.path).sort((a, b) => a.pos < b.pos ? a.pos : b.pos))
-const isOpen = ref(false)
-const transition = ref(false)
-watch(route, (to, from) => {
-  if (to.path !== from.path) transition.value = true
-  else transition.value = false
-})
 </script>
 <template>
   <div p="y-12">
@@ -48,7 +42,7 @@ watch(route, (to, from) => {
         </div>
       </template>
       <transition name="fade" mode="out-in">
-        <router-view :key="route.fullPath" :class="[currentBg, transition ? `z-2${9 - navigation.find(nav => nav.path === route.path).pos + 1}` : 'z-30']" />
+        <router-view :key="route.fullPath" :class="[currentBg, 'z-30']" />
       </transition>
     </div>
   </div>

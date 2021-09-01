@@ -39,7 +39,7 @@ const toggleLocales = () => {
         <div class="flex items-center justify-center">
           <div v-if="false" id="mobile-menu" class="sm:hidden flex flex-col">
             <div display="flex" flex="col" p="x-2 t-2 b-3" space="y-1">
-              <router-link class="bg-gray-900 text-white nav-link" aria-current="page" to="/">
+              <router-link class="bg-gray-900 text-white nav-link" to="/">
                 Home
               </router-link>
 
