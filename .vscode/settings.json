@@ -15,5 +15,6 @@
   },
   "vetur.grammar.customBlocks": {
     "route": "yaml"
-  } 
+  },
+  "colorize.include": ["**/*"]
 }

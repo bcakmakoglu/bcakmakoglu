@@ -12,7 +12,7 @@ const typography = {
         'textDecoration': 'underline',
         '&:hover': {
           opacity: 1,
-          color: colors.teal[600],
+          color: colors.lemon[600],
         },
       },
       b: { color: 'inherit' },
