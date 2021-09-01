@@ -8,6 +8,9 @@ body,
   padding: 0;
 }
 
+html {
+  @apply bg-gradient-to-l from-gold-100 to-blue-500;
+}
 html.dark {
   background: #121212;
 }
@@ -17,7 +20,7 @@ html.dark {
 }
 
 #nprogress .bar {
-  @apply bg-teal-600 opacity-75;
+  @apply bg-green-600 opacity-75;
 
   position: fixed;
   z-index: 1031;
@@ -30,14 +33,50 @@ html.dark {
 
 .btn {
   @apply px-4 py-1 rounded inline-block
-    bg-teal-600 text-white cursor-pointer
-    hover:bg-teal-700
+    bg-green-600 text-white cursor-pointer
+    hover:bg-green-300
     disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50;
 }
 
 .icon-btn {
   @apply inline-block cursor-pointer select-none
     opacity-75 transition duration-200 ease-in-out
-    hover:opacity-100 hover:text-teal-600;
-  font-size: 0.9em;
+    hover:opacity-100 hover:text-green-300;
+  font-size: 1rem;
+}
+
+.slide-leave-active,
+.slide-enter-active {
+  position: relative;
+  transition: 1s;
+}
+.slide-enter-active {
+  animation-name: pullforward;
+  animation-duration: 1s;
+}
+.slide-leave-active {
+  position: absolute;
+  animation: infinite putback 2s;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 500ms ease;
+}
+
+.fade-enter-from,
+.fade-leave-active {
+  opacity: 0;
+}
+
+@keyframes putback {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(0, -120%); }
+  100% { transform: translate(0, 0) rotate(10deg) }
+}
+
+@keyframes pullforward {
+  100% { transform: translate(0, 0); z-index: 20 }
+  50% { transform: translate(-100%, 0);  z-index: 20 }
+  0% { transform: translate(-100%, 0) rotate(10deg); z-index: 0}
 }

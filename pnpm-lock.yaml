@@ -11,7 +11,6 @@ specifiers:
   '@vue/server-renderer': ^3.2.4
   '@vueuse/core': ^6.0.0
   '@vueuse/head': ^0.6.0
-  '@vueuse/motion': ^1.6.0
   critters: ^0.0.10
   cross-env: ^7.0.3
   eslint: ^7.32.0
@@ -22,7 +21,6 @@ specifiers:
   pinia: ^2.0.0-rc.6
   pnpm: ^6.14.3
   prism-theme-vars: ^0.2.2
-  squircleyjs: ^1.1.0
   typescript: ^4.3.5
   unplugin-auto-import: ^0.0.6
   vite: ^2.5.0
@@ -44,11 +42,9 @@ dependencies:
   '@prismicio/vue': 3.0.0-alpha.3_vue@3.2.4
   '@vueuse/core': 6.0.0_vue@3.2.4
   '@vueuse/head': 0.6.0_vue@3.2.4
-  '@vueuse/motion': 1.6.0_vue@3.2.4
   nprogress: 0.2.0
   pinia: 2.0.0-rc.6_typescript@4.3.5+vue@3.2.4
   prism-theme-vars: 0.2.2
-  squircleyjs: 1.1.0
   vue: 3.2.4
   vue-demi: 0.11.3_vue@3.2.4
   vue-i18n: 9.1.7_vue@3.2.4
@@ -1910,21 +1906,6 @@ packages:
       vue: 3.2.4
     dev: false
 
-  /@vueuse/motion/1.6.0_vue@3.2.4:
-    resolution: {integrity: sha512-ue2ePBypZ0YAMoWUD/8I0Il2PTqbT84SViMGNWh5PzNRr7yaWfNbjhC2ufpYiwkTOuBH7neQwbcVV9i/+pkW5A==}
-    peerDependencies:
-      '@vue/composition-api': ^1.1.1
-      vue: ^2.0.0 || >=3.0.0-rc.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-    dependencies:
-      '@vueuse/core': 6.0.0_vue@3.2.4
-      popmotion: 9.4.0
-      vue: 3.2.4
-      vue-demi: 0.11.3_vue@3.2.4
-    dev: false
-
   /@vueuse/shared/6.0.0_vue@3.2.4:
     resolution: {integrity: sha512-PLjjqL8bxI5q86qk/ifXy572nfQE3rJc1RMem+dKcGayaagMnC4kXHEt64V98DVielSwr2FuYaeFodi4KJrvdg==}
     peerDependencies:
@@ -3337,12 +3318,6 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /framesync/5.3.0:
-    resolution: {integrity: sha512-oc5m68HDO/tuK2blj7ZcdEBRx3p1PjrgHazL8GYEpvULhrtGIFbQArN6cQS2QhW8mitffaB+VYzMjDqBxxQeoA==}
-    dependencies:
-      tslib: 2.3.1
-    dev: false
-
   /fresh/0.5.2:
     resolution: {integrity: sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=}
     engines: {node: '>= 0.6'}
@@ -3515,10 +3490,6 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
     dev: true
-
-  /hey-listen/1.0.8:
-    resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
-    dev: false
 
   /hosted-git-info/2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
@@ -4635,15 +4606,6 @@ packages:
     hasBin: true
     dev: true
 
-  /popmotion/9.4.0:
-    resolution: {integrity: sha512-FGnHjc8iDMrAwuZhka8eNx0yzcaufDqyZzW9vjJebRuC6BryR5ICyBmUH+wCgUuuaFSSU4r6oT2WtnbnDGcr3g==}
-    dependencies:
-      framesync: 5.3.0
-      hey-listen: 1.0.8
-      style-value-types: 4.1.4
-      tslib: 2.3.1
-    dev: false
-
   /postcss-modules-extract-imports/3.0.0_postcss@8.3.6:
     resolution: {integrity: sha512-bdHleFnP3kZ4NYDhuGlVK+CMrQ/pqUm8bx/oGL93K6gVwiclvX5x0n76fYMKuIGKzlABOy13zsvqjb0f92TEXw==}
     engines: {node: ^10 || ^12 || >= 14}
@@ -5348,10 +5310,6 @@ packages:
     resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=}
     dev: true
 
-  /squircleyjs/1.1.0:
-    resolution: {integrity: sha512-sCDmxlceVMGa4DTK6uBERS7GOk4mbGoILM/m/jfzB3D3v4llNt5ZYORATPiwJsBW1qWktfpMN1AcLDvZkjkcdA==}
-    dev: false
-
   /statuses/1.5.0:
     resolution: {integrity: sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=}
     engines: {node: '>= 0.6'}
@@ -5444,13 +5402,6 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
     dev: true
-
-  /style-value-types/4.1.4:
-    resolution: {integrity: sha512-LCJL6tB+vPSUoxgUBt9juXIlNJHtBMy8jkXzUJSBzeHWdBu6lhzHqCvLVkXFGsFIlNa2ln1sQHya/gzaFmB2Lg==}
-    dependencies:
-      hey-listen: 1.0.8
-      tslib: 2.3.1
-    dev: false
 
   /supports-color/5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
@@ -5564,10 +5515,6 @@ packages:
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
-
-  /tslib/2.3.1:
-    resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
-    dev: false
 
   /tsutils/3.21.0_typescript@4.3.5:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}

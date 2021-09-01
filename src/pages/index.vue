@@ -1,66 +1,69 @@
-<script setup lang="ts">
-import { useUserStore } from '~/stores/user'
+<script lang="ts" setup>
+import { useRoute } from 'vue-router'
 
-const user = useUserStore()
-const name = ref(user.savedName)
-
-const router = useRouter()
-const go = () => {
-  if (name.value)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
-}
-
-const { t } = useI18n()
-
-// Prismic related
-// const { client } = usePrismic()
-// const document = ref()
-// const headline = ref()
+const navigation = [
+  {
+    pos: 1,
+    name: 'Home',
+    path: '/',
+    theme: 'from-indigo-200 to-gold-200',
+  },
+  {
+    pos: 2,
+    name: 'About me',
+    path: '/about',
+    theme: 'from-cerise-200 to-submarine-200',
+  },
+  {
+    pos: 3,
+    name: 'Projects',
+    path: '/projects',
+    theme: 'from-lemon-100 to-blue-200',
+  },
+  {
+    pos: 4,
+    name: 'Contact',
+    path: '/contact',
+    theme: 'from-green-100 to-navy-200',
+  },
+]
+const route = useRoute()
+const currentBg = computed(() => navigation.find(nav => nav.path === route.path)?.theme)
+const cards = computed(() => navigation.filter(nav => nav.path !== route.path).sort((a, b) => a.pos < b.pos ? a.pos : b.pos))
+const isOpen = ref(false)
+const transition = ref(false)
+watch(route, (to, from) => {
+  if (to.path !== from.path) transition.value = true
+  else transition.value = false
+})
 </script>
-
 <template>
-  <div>
-    <p>
-      <a rel="noreferrer" href="https://github.com/bcakmakoglu" target="_blank">
-        <Headline class="text-navy-200" type="heading1" text="Burak Cakmakoglu"></Headline>
-      </a>
-    </p>
-    <p>
-      <em class="text-sm opacity-75">{{ t('intro.desc') }}</em>
-    </p>
-
-    <div class="py-4" />
-
-    <input
-      id="input"
-      v-model="name"
-      :placeholder="t('intro.whats-your-name')"
-      :aria-label="t('intro.whats-your-name')"
-      type="text"
-      autocomplete="false"
-      p="x-4 y-2"
-      w="250px"
-      text="center"
-      bg="transparent"
-      border="~ rounded gray-200 dark:gray-700"
-      outline="none active:none"
-      @keydown.enter="go"
-    >
-    <label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
-
-    <div>
-      <button
-        class="m-3 text-sm btn"
-        :disabled="!name"
-        @click="go"
-      >
-        {{ t('button.go') }}
-      </button>
+  <div p="y-12">
+    <div class="relative w-full max-w-full lg:max-w-6xl xl:max-w-screen-xl mx-auto">
+      <template v-for="(nav, i) of cards" :key="`card-nav-${i}`">
+        <div class="py-2 px-2 text-left hover:translate-y-[-20px] transition ease absolute inset-0 -mr-3.5 bg-gradient-to-r shadow-lg transform skew-y-0 rounded-3xl" :class="[nav.theme, `rotate-${10 - (i+i+3)}`, `z-2${9 - nav.pos+1}`]">
+          <router-link class="nav-link" :to="nav.path">
+            {{ nav.name }}
+          </router-link>
+        </div>
+      </template>
+      <transition name="fade" mode="out-in">
+        <router-view :key="route.fullPath" :class="[currentBg, transition ? `z-2${9 - navigation.find(nav => nav.path === route.path).pos + 1}` : 'z-30']" />
+      </transition>
     </div>
   </div>
 </template>
 
+<style>
+.nav-link {
+  @apply bg-blue-400 hover:bg-blue-600 text-gray-200 text-sm px-3 py-2 rounded-3xl font-medium;
+}
+.nav-link.active {
+  @apply bg-blue-700 text-white;
+}
+</style>
+
 <route lang="yaml">
 meta:
-  layout: home
+  layout: default
 </route>
