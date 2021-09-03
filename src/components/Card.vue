@@ -61,8 +61,12 @@ const toggleLocales = () => {
       <!-- /mobile- nav -->
 
       <!-- hero section -->
-      <slot name="content"></slot>
+      <slot></slot>
       <!-- /hero section -->
+
+      <!-- footer -->
+      <slot name="footer"></slot>
+      <!-- /footer -->
     </div>
   </div>
 </template>

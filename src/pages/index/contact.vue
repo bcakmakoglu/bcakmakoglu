@@ -1,7 +1,5 @@
 <template>
   <Card>
-    <template #content>
-      <div>E-Mail: Brainbraks@googlemail.com</div>
-    </template>
+    <div>E-Mail: Brainbraks@googlemail.com</div>
   </Card>
 </template>
