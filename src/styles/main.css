@@ -3,6 +3,7 @@
 html,
 body,
 #app {
+  @apply text-sm md:text-base;
   height: 100%;
   margin: 0;
   padding: 0;
