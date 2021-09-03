@@ -15,7 +15,7 @@ const { isFetching, data: shiba } = useFetch<Record<string, string>>(shibaAPI).j
 </script>
 <template>
   <div class="blog-post flex flex-col justify-center items-center">
-    <Headline type="heading1" :text="isFetching ? t('loading') : text" />
+    <h1>{{ isFetching ? t('loading') : text }}</h1>
     <template v-if="!isFetching">
       <img v-if="shiba" :src="shiba.message" alt="Shiba" />
     </template>
