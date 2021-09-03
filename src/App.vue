@@ -10,12 +10,8 @@ useHead({
     { name: 'description', content: 'Alles über mich.' },
   ],
 })
-const isMounted = ref(false)
-nextTick(() => isMounted.value = true)
 </script>
 
 <template>
-  <suspense>
-    <router-view v-if="isMounted" id="app" />
-  </suspense>
+  <router-view key="app" />
 </template>
