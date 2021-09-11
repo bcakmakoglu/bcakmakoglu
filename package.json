@@ -7,6 +7,8 @@
     "preview-https": "serve dist"
   },
   "dependencies": {
+    "@braks/revue-draggable": "^0.3.0",
+    "@braks/revue-flow": "^0.1.2",
     "@prismicio/vue": "^3.0.0-alpha.3",
     "@vueuse/core": "^6.1.0",
     "@vueuse/head": "^0.6.0",
@@ -32,8 +34,8 @@
     "https-localhost": "^4.6.5",
     "pnpm": "^6.14.6",
     "typescript": "^4.4.2",
-    "unplugin-icons": "^0.7.5",
     "unplugin-auto-import": "^0.0.6",
+    "unplugin-icons": "^0.7.5",
     "unplugin-vue-components": "^0.14.11",
     "vite": "^2.5.3",
     "vite-plugin-pages": "^0.17.5",

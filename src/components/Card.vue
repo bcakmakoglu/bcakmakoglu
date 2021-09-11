@@ -1,17 +1,26 @@
 <script lang="ts" setup>
+import { useDraggable } from '@braks/revue-draggable'
 import { isDark, toggleDark } from '~/logic'
+
+const props = defineProps<{ draggable?: boolean }>()
 
 const { t, availableLocales, locale } = useI18n()
 const toggleLocales = () => {
   const locales = availableLocales
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
 }
+if (props.draggable) {
+  const card = templateRef('card', null)
+  useDraggable(card, {
+    handle: '.drag-handle',
+  })
+}
 </script>
 <template>
-  <div class="bg-gradient-to-r relative shadow-lg rounded-3xl">
+  <div ref="card" class="card bg-gradient-to-r shadow-lg rounded-3xl">
     <!-- header -->
     <slot name="header">
-      <div class="flex items-center justify-start pt-6 pl-6">
+      <div class="flex items-center justify-start pt-6 pl-6 drag-handle">
         <span class="w-3 h-3 bg-red-400 rounded-full mr-2"></span>
         <span class="w-3 h-3 bg-yellow-400 rounded-full mr-2"></span>
         <span class="w-3 h-3 bg-green-400 rounded-full mr-2"></span>

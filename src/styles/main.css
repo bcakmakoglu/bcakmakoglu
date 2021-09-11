@@ -32,6 +32,10 @@ html.dark {
   height: 2px;
 }
 
+.card {
+  @apply min-h-full lg:max-w-6xl xl:max-w-screen-xl mx-auto lg:max-h-6xl xl:max-h-screen-xl;
+}
+
 .btn {
   @apply px-4 py-1 rounded inline-block
     bg-green-600 text-white cursor-pointer
@@ -46,38 +50,50 @@ html.dark {
   font-size: 1rem;
 }
 
-.slide-leave-active,
 .slide-enter-active {
-  position: relative;
-  transition: 1s;
-}
-.slide-enter-active {
-  animation-name: pullforward;
-  animation-duration: 1s;
-}
-.slide-leave-active {
   position: absolute;
-  animation: infinite putback 2s;
+  top: 0;
+  transition: all 500ms ease;
 }
 
-.fade-enter-active,
+.slide-enter-active {
+  animation: infinite pullforward 1s;
+}
+
+.slide-enter-to {
+  positon: relative;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
+
 .fade-leave-active {
+  position: absolute;
+  transition: all 1s ease;
+}
+
+.fade-leave-active {
+  animation: infinite putback 1s;
+}
+
+.fade-enter-active {
   transition: opacity 500ms ease;
 }
 
-.fade-enter-from,
-.fade-leave-active {
+
+.fade-enter-from {
   opacity: 0;
 }
 
 @keyframes putback {
   0% { transform: translate(0, 0); }
-  50% { transform: translate(0, -120%); }
-  100% { transform: translate(0, 0) rotate(10deg) }
+  25% { transform: translate(0, -120%);  }
+  100% { transform: translate(0, 0) rotate(10deg); z-index: 0; }
 }
 
 @keyframes pullforward {
-  100% { transform: translate(0, 0); z-index: 20 }
-  50% { transform: translate(-100%, 0);  z-index: 20 }
+  100% { transform: translate(0, 0); z-index: 30 }
+  50% { transform: translate(-100%, 0);  z-index: 30 }
   0% { transform: translate(-100%, 0) rotate(10deg); z-index: 0}
 }

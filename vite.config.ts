@@ -21,12 +21,12 @@ export default defineConfig({
   },
   plugins: [
     Vue({
-      include: [/\.vue$/, /\.md$/],
+      include: [/\.vue$/],
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
-      extensions: ['vue', 'md'],
+      extensions: ['vue'],
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
@@ -73,9 +73,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'robots.txt', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'Vitesse',
-        short_name: 'Vitesse',
-        theme_color: '#ffffff',
+        name: 'Burak Cakmakoglu',
+        short_name: 'Braks',
+        theme_color: '#8c60da',
         icons: [
           {
             src: '/pwa-192x192.png',

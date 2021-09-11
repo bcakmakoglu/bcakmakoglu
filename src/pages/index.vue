@@ -1,49 +1,62 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
+import about from './index/about.vue'
+import home from './index/index.vue'
+import projects from './index/projects.vue'
+import contact from './index/contact.vue'
 
 const navigation = [
   {
     pos: 1,
+    cmp: home,
     name: 'Home',
     path: '/',
     theme: 'from-indigo-200 to-gold-200',
   },
   {
     pos: 2,
+    cmp: about,
     name: 'About me',
     path: '/about',
     theme: 'from-cerise-200 to-submarine-200',
   },
   {
     pos: 3,
+    cmp: projects,
     name: 'Projects',
     path: '/projects',
     theme: 'from-lemon-100 to-blue-200',
   },
   {
     pos: 4,
+    cmp: contact,
     name: 'Contact',
     path: '/contact',
     theme: 'from-green-100 to-navy-200',
   },
 ]
+
+const transitioning = ref(false)
 const route = useRoute()
-const currentBg = computed(() => navigation.find(nav => nav.path === route.path)?.theme)
-const cards = computed(() => navigation.filter(nav => nav.path !== route.path).sort((a, b) => a.pos < b.pos ? a.pos : b.pos))
+const current = computed(() => navigation.find(nav => nav.path === route.path))
+const filter = () => navigation.filter(nav => nav.path !== route.path).sort((a, b) => a.pos < b.pos ? a.pos : b.pos)
+const cards = ref(filter())
 </script>
 <template>
-  <div p="y-12">
+  <div p="y-12" box="border" h="full">
     <div class="relative w-full max-w-full lg:max-w-6xl xl:max-w-screen-xl mx-auto">
       <template v-for="(nav, i) of cards" :key="`card-nav-${i}`">
-        <div class="py-2 px-2 text-left hover:translate-y-[-20px] transition ease absolute inset-0 -mr-3.5 bg-gradient-to-r shadow-lg transform skew-y-0 rounded-3xl" :class="[nav.theme, `rotate-${10 - (i+i+3)}`, `z-2${9 - nav.pos+1}`]">
-          <router-link class="nav-link" :to="nav.path">
-            {{ nav.name }}
+        <div v-show="!transitioning || i !== 1" class="transition duration-400 ease absolute inset-0 bg-gradient-to-r shadow-lg transform skew-y-0 rounded-3xl" :class="[nav.theme, transitioning ? 'rotate-0' : `rotate-${10 - (i+i+3)}`, `z-2${9 - nav.pos+1}`, transitioning ? '' : 'hover:translate-y-[-20px]']">
+          <router-link :to="nav.path">
+            <component :is="nav.cmp" />
           </router-link>
         </div>
       </template>
-      <transition name="fade" mode="out-in">
-        <router-view :key="route.fullPath" :class="[currentBg, 'z-30']" />
-      </transition>
+      <router-view v-slot="{ Component }" :class="[current.theme, 'z-40']">
+        <transition name="fade" mode="out-in" @after-enter="() => { transitioning = false; cards = filter() }" @leave="() => transitioning = true">
+          <component :is="Component" :key="route.fullPath" class="relative" :draggable="true" />
+        </transition>
+      </router-view>
     </div>
   </div>
 </template>
