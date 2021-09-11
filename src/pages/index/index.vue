@@ -4,10 +4,10 @@ const { t } = useI18n()
 <template>
   <Card>
     <div class="lg:2/6 xl:w-2/4 mt-20 lg:mt-40 lg:ml-16 text-left">
-      <div text="text-4xl md:text-6xl" class="font-semibold text-gray-900 leading-none">
+      <div class="font-semibold !leading-[1.25]" text="text-4xl md:text-6xl">
         Burak Cakmakoglu
       </div>
-      <div class="mt-6 text-xl font-light text-true-gray-500 antialiased">
+      <div class="mt-6 text-xl antialiased">
         {{ t('intro.desc') }}
       </div>
       <router-link to="/about">
