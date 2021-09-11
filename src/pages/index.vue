@@ -46,14 +46,22 @@ const cards = ref(filter())
   <div p="y-12" box="border" h="full">
     <div class="relative w-full max-w-full lg:max-w-6xl xl:max-w-screen-xl mx-auto">
       <template v-for="(nav, i) of cards" :key="`card-nav-${i}`">
-        <div v-show="!transitioning || i !== 1" class="transition duration-400 ease absolute inset-0 bg-gradient-to-r shadow-lg transform skew-y-0 rounded-3xl" :class="[nav.theme, transitioning ? 'rotate-0' : `rotate-${10 - (i+i+3)}`, `z-2${9 - nav.pos+1}`, transitioning ? '' : 'hover:translate-y-[-20px]']">
+        <div v-show="!transitioning || nav.pos !== current.pos - 1" class="transition duration-400 ease absolute inset-0 bg-gradient-to-r shadow-lg transform skew-y-0 rounded-3xl" :class="[nav.theme, transitioning ? 'rotate-0' : `rotate-${10 - (i+i+3)}`, `z-2${9 - nav.pos+1}`, transitioning ? '' : 'hover:translate-y-[-20px]']">
           <router-link :to="nav.path">
             <component :is="nav.cmp" />
           </router-link>
         </div>
       </template>
       <router-view v-slot="{ Component }" :class="[current.theme, 'z-40']">
-        <transition name="fade" mode="out-in" @after-enter="() => { transitioning = false; cards = filter() }" @leave="() => transitioning = true">
+        <transition
+          name="fade"
+          mode="out-in"
+          @after-enter="(el) => {
+            transitioning = false;
+            cards = filter();
+          }"
+          @leave="() => transitioning = true"
+        >
           <component :is="Component" :key="route.fullPath" class="relative" :draggable="true" />
         </transition>
       </router-view>
