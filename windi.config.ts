@@ -24,5 +24,6 @@ export default defineConfig({
   safelist: [
     range(10).map(i => `rotate-${i}`),
     range(100).map(i => `z-${i}`),
+    'text-black', 'text-white', 'bg-black', 'bg-white',
   ],
 })

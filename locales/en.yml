@@ -6,7 +6,7 @@ button:
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
 intro:
-  desc: Fullstack Developer 👨‍💻, Vuejs- & TypeScript-Lover 💝 and Skateboarding Enthusiast 🛹.
+  desc: Fullstack Developer 👨‍💻, Vuejs- & TypeScript-Lover 💝 and Skateboarding Enthusiast 🛹
   more: Learn more
   dynamic-route: Demo of dynamic route
   hi: Hi, {name}!

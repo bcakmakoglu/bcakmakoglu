@@ -1,18 +1,25 @@
 <template>
-  <header class="h-[60px] lg:h-[92px] shadow-lg flex border-b-1 border-light-600 border-solid items-center py-4 px-8 font-semibold dark:(text-white bg-black border-b-2 border-solid border-white)">
-    <div class="flex-1 flex justify-evenly gap-2 transform scale-85 md:scale-100">
-      <router-link class="link" to="/">
+  <header class="z-999 relative bg-white dark:bg-black h-[60px] lg:h-[92px] shadow-lg flex border-b-1 border-light-600 border-solid items-center py-4 px-8 font-semibold dark:(text-white bg-black border-b-2 border-solid border-white)">
+    <div class="flex-1 flex justify-evenly items-center gap-2 transform scale-85 md:scale-100">
+      <router-link to="/" class="icon-btn mx-2">
         Home
       </router-link>
-      <router-link class="link" to="/about">
+      <router-link class="icon-btn mx-2" to="/about">
         About
       </router-link>
-      <router-link class="link" to="/projects">
+      <router-link class="icon-btn mx-2" to="/projects">
         Projects
       </router-link>
-      <router-link class="link" to="/projects">
+      <router-link class="icon-btn mx-2" to="/projects">
         Contact
       </router-link>
+    </div>
+    <div class="flex justify-between gap-4">
+      <ColorModeSwitcher />
+      <LangSwitcher />
+      <a class="icon-btn mx-2" rel="noreferrer" href="https://github.com/bcakmakoglu/bcakmakoglu" target="_blank" title="GitHub">
+        <carbon-logo-github />
+      </a>
     </div>
   </header>
 </template>

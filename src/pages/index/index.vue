@@ -35,10 +35,10 @@ const show = ref(true)
     </div>
     <div class="absolute right-10">
       <router-link class="transition-opacity" :class="show ? 'opacity-100' : 'opacity-0'" to="/projects/flow" @click="show = false">
-        <div class="arrow-right cursor-pointer transition-all ease transform hover:scale-110">
-          <div id="cta">
-            <span class="arrow first next "></span>
-            <span class="arrow second next "></span>
+        <div class="bg-black arrow-right border-2 border-light-900 border-solid dark:(border-white) cursor-pointer transition-all ease transform hover:scale-110">
+          <div class="cta">
+            <span class="arrow first next rounded-xl"></span>
+            <span class="arrow second next rounded-xl"></span>
           </div>
         </div>
       </router-link>
