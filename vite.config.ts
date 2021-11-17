@@ -55,7 +55,7 @@ export default defineConfig({
         // https://github.com/antfu/vite-plugin-icons
         ViteIconsResolver({
           componentPrefix: '',
-          enabledCollections: ['carbon'],
+          enabledCollections: ['carbon', 'ant-design'],
         }),
       ],
     }),
