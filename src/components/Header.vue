@@ -16,7 +16,6 @@
     </div>
     <div class="flex justify-between gap-4">
       <ColorModeSwitcher />
-      <LangSwitcher />
       <a class="icon-btn mx-2" rel="noreferrer" href="https://github.com/bcakmakoglu/bcakmakoglu" target="_blank" title="GitHub">
         <carbon-logo-github />
       </a>

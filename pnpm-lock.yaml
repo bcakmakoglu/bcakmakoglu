@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@antfu/eslint-config': ^0.7.0
-  '@braks/revue-draggable': latest
+  '@braks/revue-draggable': ^0.3.5
   '@braks/vue-flow': latest
   '@iconify/json': ^1.1.397
   '@intlify/vite-plugin-vue-i18n': ^2.4.0
@@ -36,7 +36,7 @@ specifiers:
   vue-tsc: ^0.3.0
 
 dependencies:
-  '@braks/revue-draggable': 0.3.4_vue@3.2.22
+  '@braks/revue-draggable': 0.3.5_vue@3.2.22
   '@braks/vue-flow': 0.0.19_typescript@4.4.2+vue@3.2.22
   '@vueuse/core': 6.1.0_vue@3.2.22
   '@vueuse/head': 0.6.0_vue@3.2.22
@@ -1316,8 +1316,8 @@ packages:
       vue-demi: 0.12.1_vue@3.2.22
     dev: false
 
-  /@braks/revue-draggable/0.3.4_vue@3.2.22:
-    resolution: {integrity: sha512-94RqlmFPb/ARiOTrSwt0Zco5tFLK/pR6SgVl1efk3wWafngDY2GT7oa42UXuHtH2HmviCIZwWROgZG3H1G1ONA==}
+  /@braks/revue-draggable/0.3.5_vue@3.2.22:
+    resolution: {integrity: sha512-qFLxEwa28CdXd5Dl+VpF6Txi1hVyqsUgpQi/WzwR6hkbFvKnypMKQ94JkaZe5Na0PebLdlN5RERr8hkGXzk12g==}
     peerDependencies:
       '@vue/composition-api': ^1.0.0-rc.1
       vue: ^2.0.0 || >=3.0.5

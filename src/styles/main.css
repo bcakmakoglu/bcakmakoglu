@@ -12,10 +12,6 @@ body,
   -moz-osx-font-smoothing: grayscale;
 }
 
-main {
-  height: calc(100% - 92px);
-}
-
 html {
   @apply bg-light-400 text-black overflow-x-hidden;
 }
