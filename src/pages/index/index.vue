@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 const { t } = useI18n()
-const show = ref(true)
 </script>
 <template>
   <div class="w-full h-full flex flex-col justify-center items-center rounded-b-xl">
@@ -32,16 +31,6 @@ const show = ref(true)
       </div>
 
        -->
-    </div>
-    <div class="absolute right-10">
-      <router-link class="transition-opacity" :class="show ? 'opacity-100' : 'opacity-0'" to="/projects/flow" @click="show = false">
-        <div class="bg-black arrow-right border-2 border-light-900 border-solid dark:(border-white) cursor-pointer transition-all ease transform hover:scale-110">
-          <div class="cta">
-            <span class="arrow first next rounded-xl"></span>
-            <span class="arrow second next rounded-xl"></span>
-          </div>
-        </div>
-      </router-link>
     </div>
   </div>
 </template>
