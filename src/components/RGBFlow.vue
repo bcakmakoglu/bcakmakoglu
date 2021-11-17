@@ -70,11 +70,7 @@ const elements = ref<Elements>([
 const el = templateRef<HTMLDivElement>('page', null)
 
 const onLoad = (flowInstance: FlowInstance) => {
-  flowInstance.setTransform({
-    x: el.value?.clientWidth / 2.2,
-    y: el.value?.clientHeight / 3,
-    zoom: 1.25,
-  })
+  flowInstance.fitView({ padding: 0.3 })
 }
 const color = ref<Colors>({
   red: 100,
@@ -104,28 +100,6 @@ const onChange = ({
       <Controls />
       <Background variant="lines" color="#aaa" :gap="120" :size="0.7" />
       <MiniMap class="border-2 border-light-800 dark:border-indigo-400" />
-      <div class="z-99 flex flex-col gap-4 w-1/3 absolute top-40 left-15">
-        <h1 class="text-2xl lg:text-5xl" :style="{ color: `rgb(${color.red}, ${color.green}, ${color.blue})` }">
-          Visualize your ideas with Vue Flow
-        </h1>
-        <h2 class="text-lg lg:text-2xl text-gray-400 font-normal">
-          A customizable Vue.js library for building node-based editors and diagrams.
-        </h2>
-        <div class="transform scale-75 lg:scale-100 flex flex-row justify-center items-center gap-4 mt-6">
-          <a
-            class="p-4 bg-green-500 hover:bg-black border border-light-400 rounded-full !text-white font-semibold text-lg"
-            href="https://vueflow.dev/docs"
-          >
-            Documentation
-          </a>
-          <a
-            class="p-4 bg-white hover:bg-black border border-light-400 rounded-full bg-blue-500 !text-white font-semibold text-lg"
-            href="https://vueflow.dev/examples"
-          >
-            Examples
-          </a>
-        </div>
-      </div>
     </VueFlow>
   </div>
 </template>
