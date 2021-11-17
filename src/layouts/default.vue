@@ -1,5 +1,13 @@
 <template>
-  <main h="full" p="y-10 x-6" text="center gray-700">
-    <router-view key="view" />
-  </main>
+  <div class="flex-1 flex flex-col h-full w-full">
+    <main p="24" class="flex flex-col justify-center items-center">
+      <Card class="w-3/4">
+        <router-view v-slot="{ Component, route }">
+          <transition name="fade" mode="out-in">
+            <component :is="Component" :key="route" />
+          </transition>
+        </router-view>
+      </Card>
+    </main>
+  </div>
 </template>

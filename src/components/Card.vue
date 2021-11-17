@@ -21,29 +21,25 @@ const toggleLocales = () => {
 const card = templateRef('card', null)
 const header = templateRef('header', null)
 
-if (props.draggable) {
-  useDraggable(card, {
-    handle: '.drag-handle',
-  })
-}
+useDraggable(card, {
+  handle: '.drag-handle',
+})
 </script>
 <template>
   <div
     ref="card"
-    class="card shadow-lg rounded-3xl transform border-b-1 border-r-1 border-light-400"
+    class="card overflow-hidden bg-light-400 dark:bg-black shadow-xl rounded-3xl transform border-1 dark:border-light-400 border-light-800 flex flex-col"
     :class="{
-      'text-white': isDark,
-      'text-gray-900': !isDark,
       [colorTypes[color]]: true
     }"
   >
     <!-- header -->
     <slot name="header">
-      <div ref="header" class="flex items-center justify-start pt-6 pl-6 drag-handle" :class="draggable ? 'cursor-move' : ''">
+      <div ref="header" class="flex items-center justify-start shadow-sm  pl-6 drag-handle border-b-1 border-solid border-light-800" :class="draggable ? 'cursor-move' : ''">
         <span class="w-3 h-3 bg-red-400 rounded-full mr-2"></span>
         <span class="w-3 h-3 bg-yellow-400 rounded-full mr-2"></span>
         <span class="w-3 h-3 bg-green-400 rounded-full mr-2"></span>
-        <div class="w-full hidden md:flex items-center justify-end pr-4">
+        <div class="w-full hidden md:flex items-center justify-end pr-4 mb-4 pt-6">
           <button class="icon-btn mx-2 !outline-none" :title="t('button.toggle_dark')" @click.prevent="() => toggleDark()">
             <carbon-moon v-if="isDark" />
             <carbon-sun v-else />
@@ -61,7 +57,7 @@ if (props.draggable) {
     </slot>
     <!-- /header -->
 
-    <div class="px-20 pb-6">
+    <div class="flex-1 flex flex-col justify-center items-center w-full overflow-x-hidden overflow-y-scroll h-full">
       <!-- mobile nav -->
       <div class="flex items-center justify-between">
         <div class="flex items-center justify-center">

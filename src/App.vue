@@ -5,13 +5,18 @@ import { useHead } from '@vueuse/head'
 // you can use this to manipulate the document head in any components,
 // they will be rendered correctly in the html results with vite-ssg
 useHead({
-  title: 'Burak\'s Webseite',
+  title: 'Braks | Burak Cakmakoglu',
   meta: [
-    { name: 'description', content: 'Alles über mich.' },
+    { name: 'description', content: 'Website of Burak Cakmakoglu.' },
   ],
 })
 </script>
 
 <template>
-  <router-view key="app" />
+  <Header />
+  <router-view v-slot="{ Component, route }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" :key="`app-${route}`" />
+    </transition>
+  </router-view>
 </template>

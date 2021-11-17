@@ -7,13 +7,20 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'JetBrains Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  height: calc(100% - 92px);
 }
 
 html {
-  @apply bg-gradient-to-t from-sky-400 to-sky-200;
+  @apply bg-light-400 text-black overflow-x-hidden;
 }
 html.dark {
-  @apply bg-gradient-to-t from-gray-900 via-indigo-900 to-violet-600;
+  @apply !bg-gray-900 text-white;
 }
 
 #nprogress {
@@ -50,70 +57,121 @@ html.dark {
   font-size: 1rem;
 }
 
-.slide-enter-active {
-  position: absolute;
-  top: 0;
-  transition: all 500ms ease;
-}
-
-.slide-enter-active {
-  animation: infinite pullforward 1s;
-}
-
-.slide-enter-to {
-  positon: relative;
-}
-
-
-// Card transition
-.fade-leave-to {
-  transform: translate(0, 0) rotate(0deg); 
-  z-index: -1;
+.fade-leave-active {
+  transition: all 1s ease;
 }
 
 .fade-leave-active {
-  transition: transform 1s ease;
-}
-
-.fade-leave-active {
-  animation: putback 1s;
+  animation: slideOut 1s;
 }
 
 .fade-enter-active {
- transition: opacity 500ms ease-in;
+  transition: all 1s ease;
+  animation: slideIn 1s;
 }
 
 .fade-enter-from {
- opacity: 0.2;
+ opacity: 0;
 }
 
-@keyframes putback {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(0, -120%) rotate(10deg) }
-  80% { opacity: 1 }
-  100% { transform: translate(0, 0) rotate(0deg); z-index: -1; opacity: 0; }
+@keyframes slideOut {
+  0% { transform: translate(0, 0); opacity: 1; }
+  100% { transform: translate(200%, 0); opacity: 0; }
 }
 
-@keyframes pullforward {
-  100% { transform: translate(0, 0); z-index: 99; }
-  50% { transform: translate(-100%, 0);  z-index: 99; }
-  0% { transform: translate(-100%, 0) rotate(10deg); z-index: 0}
+@keyframes slideIn {
+  0% { transform: translate(-200%, 0); opacity: 0; }
+  100% { transform: translate(0, 0); opacity: 1; }
 }
 
-.linear-wipe {
-  background-size: 300% auto;
-  
-  color: #000;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  
-  animation: shine 5s linear infinite;
+.screen-content {
+  height: calc(100% - 240px);
 }
 
-@keyframes shine {
-    to {
-      background-position: 200% center;
-    }
-  }
+.gradient-btn {
+  @apply px-8 py-4 rounded-full font-normal tracking-wide bg-gradient-to-b from-blue-600 to-blue-700 text-white outline-none focus:outline-none hover:shadow-lg hover:from-blue-700 transition duration-200 ease-in-out;
+}
+
+.arrow-right {
+  position: relative;
+  border: 2px solid #fff;
+  width: 40px;
+  min-height: 40px;
+  border-radius: 100%;
+}
+
+.cta{
+  width:100%; cursor: pointer; position: absolute;
+}
+
+.cta .arrow{left: 30%;}
+.arrow {position: absolute; bottom: 0;  margin-left:0px; width: 12px; height: 12px; background-size: contain; top:12px; left:12px }
+.second{margin-left: 8px;}
+.next {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+}
+
+@keyframes bounceAlpha {
+  0% {opacity: 1; transform: translateX(0px) scale(1);}
+  25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+  55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+
+.bounceAlpha {
+  animation-name: bounceAlpha;
+  animation-duration:1.4s;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+}
+
+.arrow.primera.bounceAlpha {
+  animation-name: bounceAlpha;
+  animation-duration:1.4s;
+  animation-delay:0.2s;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+}
+
+.arrow-right .arrow{
+  animation-name: bounceAlpha;
+  animation-duration:1.4s;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+}
+.arrow-right .arrow.first{
+  animation-name: bounceAlpha;
+  animation-duration:1.4s;
+  animation-delay:0.2s;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+}
+
+.demo-flow {
+  @apply bg-white border-1 solid border-gray-300 rounded-xl;
+}
+
+h1 {
+  @apply text-xl lg:text-4xl mb-4 font-bold;
+}
+
+h2 {
+  @apply text-lg lg:text-2xl mb-4 font-semibold;
+}
+
+p {
+  @apply text-md lg:text-lg font-qtype;
+}
+
+p ~ h1, p ~ h2 {
+  @apply mt-6;
+}
+
+ul {
+  padding: revert;
+}
+
+li {
+  @apply mt-2 text-md lg:text-lg;
+  list-style-type: circle;
+}
