@@ -83,7 +83,6 @@ html.dark {
 
 .screen-content {
   @apply p-12;
-  height: calc(100% - 240px);
 }
 
 .gradient-btn {

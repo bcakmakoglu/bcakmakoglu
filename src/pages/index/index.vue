@@ -2,7 +2,7 @@
 const { t } = useI18n()
 </script>
 <template>
-  <div class="w-full h-full flex flex-col justify-center items-center rounded-b-xl">
+  <div class="w-full h-full flex flex-col justify-start lg:justify-center items-center rounded-b-xl">
     <div class="screen-content text-center w-3/4 lg:w-1/2 flex flex-col justify-center items-center gap-6">
       <div class="font-semibold" text="text-4xl md:text-6xl">
         Burak Cakmakoglu

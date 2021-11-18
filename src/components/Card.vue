@@ -85,7 +85,7 @@ const expand = () => {
       },
     ]
     "
-    class="card overflow-hidden transition-opacity duration-750 transform flex flex-col"
+    class="card max-h-full overflow-hidden transition-opacity duration-750 transform flex-auto flex flex-col"
     :style="mini ? `transform: scale(25%)` : null"
   >
     <!-- header -->
@@ -116,7 +116,7 @@ const expand = () => {
           <div class="mx-auto">
             {{ props.title }}
           </div>
-          <button class="icon-btn mx-2 !outline-none" @click.prevent="toggleDark">
+          <button class="icon-btn mx-2 !outline-none" @click.stop="toggleDark">
             <carbon-moon v-if="dark" />
             <carbon-sun v-else />
           </button>

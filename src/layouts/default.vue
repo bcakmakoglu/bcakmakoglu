@@ -1,9 +1,9 @@
 <template>
   <div style="height: calc(100% - 92px)" class="flex-1 flex flex-col w-full">
-    <main class="flex flex-col w-full h-full justify-center items-center">
-      <div class="flex w-2/2 h-2/3 justify-center items-center">
+    <main class="flex flex-col p-6 lg:p-0 w-full h-full justify-center items-center">
+      <div class="flex w-full h-full lg:w-2/3 lg:h-2/3 justify-center items-center">
         <router-view v-slot="{ Component, route }">
-          <Card class="w-3/4">
+          <Card class="w-3/4 h-1/2">
             <transition name="fade" mode="out-in">
               <component :is="Component" :key="route.name" :title="route.name" />
             </transition>
