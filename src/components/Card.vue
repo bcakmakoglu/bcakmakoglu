@@ -85,15 +85,14 @@ const expand = () => {
       },
     ]
     "
-    class="card overflow-hidden transition-opacity duration-500 transform flex flex-col"
-    :style="{ transform: mini ? 'scale(25%)' : ''}"
+    class="card overflow-hidden transition-opacity duration-750 transform flex flex-col"
+    :style="mini ? `transform: scale(25%)` : null"
   >
     <!-- header -->
     <slot name="header">
       <div
-        v-show="!hide"
         ref="header"
-        class="flex items-center justify-start shadow-sm  pl-6 drag-handle border-b-1 border-solid border-light-800 cursor-move"
+        class="flex min-h-12 items-center justify-start shadow-sm  pl-6 drag-handle border-b-1 border-solid border-light-800 cursor-move"
       >
         <span
           class="text-black w-3 h-3 flex justify-center items-center p-[0.5px] bg-red-400 rounded-full mr-2 cursor-pointer"
@@ -127,7 +126,6 @@ const expand = () => {
     <!-- /header -->
 
     <div
-      v-show="!hide"
       class="relative flex-1 flex flex-col justify-center items-center w-full overflow-x-hidden overflow-y-scroll h-full"
       @click="expand"
     >

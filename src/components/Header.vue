@@ -1,5 +1,5 @@
 <template>
-  <header class="z-999 relative bg-white dark:bg-black h-[60px] lg:h-[92px] shadow-lg flex border-b-1 border-light-600 border-solid items-center py-4 px-8 font-semibold dark:(text-white bg-black border-b-2 border-solid border-white)">
+  <header ref="header" class="z-999 relative bg-white dark:bg-black h-[60px] lg:h-[92px] shadow-lg flex border-b-1 border-light-600 border-solid items-center py-4 px-8 font-semibold dark:(text-white bg-black border-b-2 border-solid border-white)">
     <div class="flex-1 flex justify-evenly items-center gap-2 transform scale-85 md:scale-100">
       <router-link to="/" class="icon-btn mx-2">
         Home
