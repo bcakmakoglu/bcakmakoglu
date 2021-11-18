@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-col h-full w-full justify-center items-center">
+  <main style="height: calc(100% - 92px)" class="flex flex-col w-full justify-center items-center">
     <router-view v-slot="{ Component, route }">
       <transition name="fade" mode="out-in">
         <component :is="Component" :key="route" />

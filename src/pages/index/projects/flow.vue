@@ -5,8 +5,8 @@ meta:
 <template>
   <div class="w-full h-full flex flex-col justify-center items-center rounded-b-xl">
     <div class="screen-content text-center h-full w-full flex flex-col gap-6">
-      <div class="w-full m-auto min-h-[75vh] flex flex-row justify-center gap-12 p-12">
-        <Card class="w-1/2">
+      <div class="w-full m-auto min-h-[75vh] flex flex-col lg:flex-row justify-center gap-12 p-12">
+        <Card class="w-full lg:w-1/2">
           <div class="p-12 flex flex-col gap-4 justify-center items-center">
             <h1 class="text-3xl">
               Visualize your ideas with Vue Flow
@@ -30,7 +30,7 @@ meta:
             </div>
           </div>
         </Card>
-        <Card class="h-full w-full m-auto mt-12">
+        <Card class="h-[650px] w-full m-auto mt-12">
           <div class="flex-1 h-full w-full">
             <RGBFlow />
           </div>
