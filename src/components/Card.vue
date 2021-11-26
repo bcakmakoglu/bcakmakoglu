@@ -45,7 +45,7 @@ onDragStop(({ event }) => {
   const element = document.elementsFromPoint(event.clientX, event.clientY).filter(el => el.classList.contains('revue-draggable') && !el.classList.contains('revue-draggable-dragging'))[0]
   if (element) {
     const wasDragged = element.classList.contains('revue-draggable-dragged')
-    element.classList.toggle('!z-9', wasDragged)
+    element.classList.toggle('z-9', wasDragged)
   }
 })
 const reset = () => {
