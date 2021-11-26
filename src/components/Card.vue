@@ -34,13 +34,20 @@ const toggleHide = () => (hide.value = !hide.value)
 const {
   onDragStart,
   onDrag,
+  onDragStop,
   state,
 } = useDraggable(card, {
   handle: '.drag-handle',
-  defaultClassNameDragging: '!z-99',
 })
 onDragStart(e => drag(e))
 onDrag(e => drag(e))
+onDragStop(({ event }) => {
+  const element = document.elementsFromPoint(event.clientX, event.clientY).filter(el => el.classList.contains('revue-draggable') && !el.classList.contains('revue-draggable-dragging'))[0]
+  if (element) {
+    const wasDragged = element.classList.contains('revue-draggable-dragged')
+    element.classList.toggle('!z-9', wasDragged)
+  }
+})
 const reset = () => {
   state.value = {
     ...state.value,
@@ -177,6 +184,6 @@ const expand = () => {
   z-index: 99 !important;
 }
 .revue-draggable-dragged {
-  z-index: 97 !important;
+  z-index: 10;
 }
 </style>
