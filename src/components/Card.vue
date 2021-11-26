@@ -22,7 +22,7 @@ route.beforeResolve(() => {
   return true
 })
 watch(isDark, (val) => {
-  if (maxi.value) dark.value = val
+  dark.value = val
 })
 const drag = ({ data }: DraggableEvent) => {
   pos.value[0] = data.x
@@ -37,6 +37,7 @@ const {
   state,
 } = useDraggable(card, {
   handle: '.drag-handle',
+  defaultClassNameDragging: '!z-99',
 })
 onDragStart(e => drag(e))
 onDrag(e => drag(e))

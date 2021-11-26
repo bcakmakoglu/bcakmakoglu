@@ -11,7 +11,7 @@ const elements = ref<Elements>([
   {
     id: '1',
     type: 'rgb',
-    data: { color: 'r' },
+    data: { color: 'g' },
     position: {
       x: -25,
       y: 50,
@@ -20,7 +20,7 @@ const elements = ref<Elements>([
   {
     id: '2',
     type: 'rgb',
-    data: { color: 'g' },
+    data: { color: 'r' },
     position: {
       x: 50,
       y: -100,
@@ -46,14 +46,14 @@ const elements = ref<Elements>([
   },
   {
     id: 'e1-4',
-    data: { color: 'red' },
+    data: { color: 'green' },
     source: '1',
     target: '4',
     animated: true,
   },
   {
     id: 'e2-4',
-    data: { color: 'green' },
+    data: { color: 'red' },
     source: '2',
     target: '4',
     animated: true,
@@ -66,8 +66,6 @@ const elements = ref<Elements>([
     animated: true,
   },
 ])
-
-const el = templateRef<HTMLDivElement>('page', null)
 
 const onLoad = (flowInstance: FlowInstance) => {
   flowInstance.fitView({ padding: 0.3 })
@@ -83,11 +81,11 @@ const onChange = ({
 }: { color: keyof Colors; val: number }) => (color.value[c] = Number(val))
 </script>
 <template>
-  <div ref="page" class="flex-1 h-full w-full">
+  <div class="flex-1 h-full w-full">
     <VueFlow
-      :elements="elements"
+      v-model="elements"
       :node-types="['rgb', 'rgb-output']"
-      :edge-types="['rgb-line', 'pathfinding']"
+      :edge-types="['rgb-line']"
       :zoom-on-scroll="false"
       @load="onLoad"
     >
