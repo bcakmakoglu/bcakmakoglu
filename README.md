@@ -1,6 +1,6 @@
 # Burak Cakmakoglu's Profile 🏴‍☠️
 
-<img src="https://i.redd.it/v23m1t92qhx01.jpg" alt="drawing" width="500" />
+<img src="https://user-images.githubusercontent.com/78412429/169705513-86b8b920-a7b8-49a3-bb3d-569a92ed7079.png" alt="MrT" width="660" />
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=bcakmakoglu)](https://github.com/bcakmakoglu)
 
@@ -8,47 +8,13 @@
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=bcakmakoglu)](https://github.com/bcakmakoglu/github-readme-stats)
 
-```ts
-import { Ability, Motivation, Personality } from 'life'
+## Welcome
 
-type Skills = { [key: Ability]: Motivation }
+Well met, mysterious visitor.
+You have come to find, or ended up finding it by random chance, my profile.
+There is not much to see here, but if you would like to, you can browse through my repos and see if there's anything that strikes you as useful.
 
-interface ContactInfo {
-    mail?: string
-    website?: string
-    phone?: string
-}
-interface Developer {
-    firstName: string
-    lastName: string
-    skills: Skills
-    personality: Personality[]
-    contact?: ContactInfo
-}
+All my personal work is free and open, even for strangers, to use as they please.
+If you got any more questions, send a letter my way and I will answer your inquiries timely.
 
-const braks: Developer = {
-    firstName: 'Burak',
-    lastName: 'Cakmakoglu',
-    skills: {
-        'Vue': 10,
-        'React': 8,
-        'Angular': 5,
-        'TypeScript': 10,
-        'JavaScript': 5,
-        'GraphQL': 8,
-        'PHP': 5,
-        'Java': 3,
-        '(S)CSS': 9,
-        'MachineLearning': 7,
-        'Docker': 8,
-        'AWS': 8,
-        'Cloud': 8,
-        'Hasura': 8,
-    },
-    personality: ['courageous', 'kind', 'funny', 'annoying'],
-    contact: {
-        mail: 'brainbraks@googlemail.com',
-        website: 'https://github.com/bcakmakoglu'
-    },
-}
-```
+Now then, be one your way traveler!
