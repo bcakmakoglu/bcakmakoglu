@@ -1,6 +1,6 @@
 # Burak Cakmakoglu's Profile 🏴‍☠️
 
-<img src="https://user-images.githubusercontent.com/78412429/169705513-86b8b920-a7b8-49a3-bb3d-569a92ed7079.png" alt="MrT" width="660" />
+https://github.com/bcakmakoglu/bcakmakoglu/assets/78412429/314d3841-6998-4880-9d22-2bbb43f48e48
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=bcakmakoglu)](https://github.com/bcakmakoglu)
 
