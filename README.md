@@ -1,7 +1,5 @@
 # Burak Cakmakoglu's Profile 🏴‍☠️
 
-https://github.com/bcakmakoglu/bcakmakoglu/assets/78412429/314d3841-6998-4880-9d22-2bbb43f48e48
-
 [![trophy](https://github-profile-trophy.vercel.app/?username=bcakmakoglu)](https://github.com/bcakmakoglu)
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=bcakmakoglu&show_icons=true)
